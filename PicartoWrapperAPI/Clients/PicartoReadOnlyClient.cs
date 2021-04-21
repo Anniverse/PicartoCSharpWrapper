@@ -157,7 +157,7 @@ namespace PicartoWrapperAPI.Clients
             var request = GetRequest("channel/name/{name}", Method.GET);
             request.AddUrlSegment("name", name);
             var response = restClient.Execute<Channel>(request);
-            return response.Data.Online;
+            return response.Data?.Online ?? false;
         }
 
         /// <summary>
